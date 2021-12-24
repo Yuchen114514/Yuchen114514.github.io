@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>2021211439张宇琛的软导实验课期末作业</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
-
-<style>
-  @supports ((-webkit-backdrop-filter: saturate(180%) blur(20px)) or (backdrop-filter: saturate(180%) blur(20px))) {
-  #head {
-      background: rgba(0, 0, 0, 0.8);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      backdrop-filter: saturate(180%) blur(20px)
-  }
-  title{
-    font-family: "PANGTOUYU";
-        src: url("方正胖头鱼简体.ttf");
+  <meta charset="utf-8">
+  <title>2021211439张宇琛的软导实验课期末作业</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <style>
+    @supports ((-webkit-backdrop-filter: saturate(180%) blur(20px)) or (backdrop-filter: saturate(180%) blur(20px))) {
+    #head {
+        background: rgba(0, 0, 0, 0.8);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px)
     }
-    body{
+    title {
+      font-family: "PANGTOUYU";
+      src: url("方正胖头鱼简体.ttf");
+    }
+    body {
       background-image: url("https://api.timecdn.cn/libs/wallpaper/v1");
       background-attachment: fixed;
       background-size: cover;
       padding-top: 30px;
 
     }
-    @font-face{
-        font-family: "PANGTOUYU";
-        src: url("方正胖头鱼简体.ttf");
+    @font-face {
+      font-family: "PANGTOUYU";
+      src: url("方正胖头鱼简体.ttf");
     }
-    code{
-        font-family: "Comic Sans MS","PANGTOUYU";
-        color:rgb(0, 0, 0);
-        background:yellow;
+    code {
+      font-family: "Comic Sans MS","PANGTOUYU";
+      color:rgb(0, 0, 0);
+      background:yellow;
     }
 
     #head {
@@ -42,17 +41,14 @@
       font-size: 16px;
       padding: 12px;
       box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.377);
-      }
-      
-
-</style>
+    }
+  </style>
 </head>
 <body>
-    <div id="head">2021211439 张宇琛的实验</div>
-    <h1 >实验一 LED灯</h1>
-    <h2>说明：此实验可以通过遥控器操作实现LED灯的变化</h2>
-    <pre><code>
-      /*实验一 遥控灯*/
+  <div id="head">2021211439 张宇琛的实验</div>
+  <h1 >实验一 LED灯</h1>
+  <h2>说明：此实验可以通过遥控器操作实现LED灯的变化</h2>
+  <pre><code>/*实验一 遥控灯*/
 #include &lt IRremote.h &gt
 #include &lt liquidCrystal_I2C.h &gt
 int RECV_PIN=10;
@@ -79,13 +75,11 @@ void loop() {
    }
   irrecv.resume();
   }
-}
-
-    </code></pre>
-    <img src="sy1.png" alt="图片加载失败" width="400" height="500">
-    <h1>实验二 点歌台</h1>
-    <h2>说明：此实验可以通过计算机输入控制歌曲（我真的想不出来除了助教给的示例以外其他的只有do到xi的音乐了，所以只能用这两个了┭┮﹏┭┮）</h2>
-    <pre><code>/*实验二 点歌台*/
+}</code></pre>
+  <img src="sy1.png" alt="图片加载失败" width="400" height="500">
+  <h1>实验二 点歌台</h1>
+  <h2>说明：此实验可以通过计算机输入控制歌曲（我真的想不出来除了助教给的示例以外其他的只有do到xi的音乐了，所以只能用这两个了┭┮﹏┭┮）</h2>
+  <pre><code>/*实验二 点歌台*/
 #include &lt IRremote.h &gt
 #include &lt liquidCrystal_I2C.h &gt
 #define DO 294
@@ -219,64 +213,60 @@ void loop() {
     }
   }
   
+}</code></pre>
+  <img src="sy2.png" alt="图片加载失败" width="190" height="120">
+  <h1>实验三 实时温度检测器</h1>
+  <h2>说明：此实验可以检测实时温度（虽然说不准）</h2>
+  <pre><code>/* 实验三 实时温度检测器 */
+#include &lt wire.h &gt
+#include &lt LiquidCrystal_I2C.h &gt     
+#include &lt dht11.h &gt     
+dht11 DHT;      
+#define DHT11_PIN    
+void setup(){  
+  lcd.init(); // LCD初始化设置
+  lcd.backlight(); // 打开LCD背光
+  Serial.begin(9600); // 设置串口波特率9600   
+  //串口输出”Type, status, Humidity(%), Temperature(C)”     
+  Serial.println("Type,\tstatus,\tHumidity(%),\tTemperature(C)");      
+  lcd.print("Humidity(%): "); //LCD屏显示” Humidity(%):”      
+  lcd.setCursor(0, 1); //光标移到第2行，第一个字符     
+  lcd.print("Temp(C): "); //LCD屏显示”Temp(C):”      
 }
-</code></pre>
-<img src="sy2.png" alt="图片加载失败" width="190" height="120">
-
-    <h1>实验三 实时温度检测器</h1>
-    <h2>说明：此实验可以检测实时温度（虽然说不准）</h2>
-    <pre><code>
-    #include &lt wire.h &gt
-    #include &lt LiquidCrystal_I2C.h &gt     
-    #include &lt dht11.h &gt     
-    dht11 DHT;      
-    #define DHT11_PIN    
-    void setup(){  
-       lcd.init(); // LCD初始化设置
-       lcd.backlight(); // 打开LCD背光
-       Serial.begin(9600); // 设置串口波特率9600   
-       //串口输出”Type, status, Humidity(%), Temperature(C)”     
-       Serial.println("Type,\tstatus,\tHumidity(%),\tTemperature(C)");      
-       lcd.print("Humidity(%): "); //LCD屏显示” Humidity(%):”      
-       lcd.setCursor(0, 1); //光标移到第2行，第一个字符     
-       lcd.print("Temp(C): "); //LCD屏显示”Temp(C):”      
-      }     
-      void loop() {     
-       int chk; //chk用于存储DHT11传感器的数据      
-       Serial.print("DHT11, \t");
-       //读取 DHT11传感器的数据
-       chk = DHT.read(DHT11_PIN);
-       switch (chk){
-        case DHTLIB_OK:
-        Serial.print("OK,\t");
-        break;
-        case DHTLIB_ERROR_CHECKSUM:
-         Serial.print("Checksum error,\t");
-         break;
-        case DHTLIB_ERROR_TIMEOUT:
-         Serial.print("Time out error,\t");
-         break;
-        default:
-         Serial.print("Unknown error,\t");
-         break;
-       }
-       //串口显示温湿度值
-       Serial.print(DHT.humidity,1);
-       Serial.print(",\t");
-       Serial.println(DHT.temperature,1);
-       //LCD显示温湿度值
-       lcd.setCursor(12, 0);
-       lcd.print(DHT.humidity,1);
-       lcd.setCursor(8, 1);
-       lcd.print(DHT.temperature,1);
-       delay(1000);
-      }
-    </code></pre>
-    <img src="sy3.png" alt="图片加载失败" width="340" height="270">
-    <h1>实验四 日历</h1>
-    <h2>说明：此实验可以做出电子日历，但是这个时间也不准，会快一些</h2>
-         /*实验四 日历*/
-         <pre><code>
+void loop() {     
+  int chk; //chk用于存储DHT11传感器的数据      
+  Serial.print("DHT11, \t");
+  //读取 DHT11传感器的数据
+  chk = DHT.read(DHT11_PIN);
+  switch (chk){
+  case DHTLIB_OK:
+    Serial.print("OK,\t");
+    break;
+  case DHTLIB_ERROR_CHECKSUM:
+    Serial.print("Checksum error,\t");
+    break;
+  case DHTLIB_ERROR_TIMEOUT:
+    Serial.print("Time out error,\t");
+    break;
+  default:
+    Serial.print("Unknown error,\t");
+    break;
+  }
+  //串口显示温湿度值
+  Serial.print(DHT.humidity,1);
+  Serial.print(",\t");
+  Serial.println(DHT.temperature,1);
+  //LCD显示温湿度值
+  lcd.setCursor(12, 0);
+  lcd.print(DHT.humidity,1);
+  lcd.setCursor(8, 1);
+  lcd.print(DHT.temperature,1);
+  delay(1000);
+ }</code></pre>
+  <img src="sy3.png" alt="图片加载失败" width="340" height="270">
+  <h1>实验四 日历</h1>
+  <h2>说明：此实验可以做出电子日历，但是这个时间也不准，会快一些</h2>
+  <pre><code>/*实验四 日历*/
 #include &lt IRremote.h &gt
 #include &lt liquidCrystal_I2C.h &gt
 liquidCrystal_I2C lcd(0x20,16,2);
@@ -484,8 +474,7 @@ void date(){
       {
         D2=0;
         D1=D1+1;
-        }
-    </code></pre>
-    <img src="sy4.png" alt="图片加载失败" width="400" height="300">
+      }</code></pre>
+  <img src="sy4.png" alt="图片加载失败" width="400" height="300">
 </body>
 </html>
