@@ -4,95 +4,17 @@
   <meta charset="utf-8">
   <title>2021211439张宇琛的软导实验课期末作业</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
-  <style>
-    @keyframes rotating {
-      0% {
-        transform: rotateY(0);
-      }
-      100% {
-        transform: rotateY(360deg);
-      }
-    }
-
-    #op-container {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      max-width: 50%;
-    }
-
-    #op-container img {
-      max-width: 50%;
-      vertical-align:bottom;
-      animation: rotating 1s infinite linear;
-    }
-    #op2-container {
-      position: fixed;
-      right: 0;
-      top: 0;
-      max-width: 50%;
-    }
-    #op2-container img {
-      max-width: 50%;
-      vertical-align: top;
-      vertical-align: bottom;
-      animation: rotating 1s infinite linear;
-    }
-
-    @supports (
-      (-webkit-backdrop-filter: saturate(180%) blur(20px)) or 
-      (backdrop-filter: saturate(180%) blur(20px))
-    ) {
-      #head {
-        background: rgba(0, 0, 0, 0.8);
-        -webkit-backdrop-filter: saturate(180%) blur(20px);
-        backdrop-filter: saturate(180%) blur(20px);
-      }
-    }
-
-    title {
-      font-family: "PANGTOUYU";
-    }
-
-    body {
-      background-image: url("https://api.timecdn.cn/libs/wallpaper/v1");
-      background-attachment: fixed;
-      background-size: cover;
-      padding-top: 30px;
-    }
-
-    @font-face {
-      font-family: "PANGTOUYU";
-      src: url("方正胖头鱼简体.ttf");
-    }
-
-    code {
-      font-family: "Comic Sans MS","PANGTOUYU";
-      color:rgb(0, 0, 0);
-      background:yellow;
-    }
-
-    #head {
-      position: fixed;
-      left: 0px;
-      top: 0px;
-      width: 100%;
-      background-color: rgba(248, 248, 248, 0.356);
-      font-size: 16px;
-      padding: 12px;
-      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.377);
-    }
-  </style>
+  <link href="css/mainstyle.css" rel="stylesheet">
 </head>
 <body>
   <div id="op-container">
-    <img src="keli.png"><img src="keqing.png">
+    <img src="img/klee.png"><img src="img/kequeen.png">
   </div>
   <div id="op2-container">
-    <img src="paimeng.png">
+    <img src="img/paimon.png">
   </div>
   <div id="head">2021211439 张宇琛的实验</div>
-  <h1 >实验一 LED灯</h1>
+  <h1>实验一 LED灯</h1>
   <h2>说明：此实验可以通过遥控器操作实现LED灯的变化</h2>
   <pre><code>/*实验一 遥控灯*/
 #include &lt IRremote.h &gt
@@ -122,7 +44,7 @@ void loop() {
   irrecv.resume();
   }
 }</code></pre>
-  <img src="sy1.png" alt="图片加载失败" width="400" height="500">
+  <img src="img/lab1.png" alt="图片加载失败" width="400" height="500">
   <h1>实验二 点歌台</h1>
   <h2>说明：此实验可以通过计算机输入控制歌曲（我真的想不出来除了助教给的示例以外其他的只有do到xi的音乐了，所以只能用这两个了┭┮﹏┭┮）</h2>
   <pre><code>/*实验二 点歌台*/
@@ -260,7 +182,7 @@ void loop() {
   }
   
 }</code></pre>
-  <img src="sy2.png" alt="图片加载失败" width="190" height="120">
+  <img src="img/lab2.png" alt="图片加载失败" width="190" height="120">
   <h1>实验三 实时温度检测器</h1>
   <h2>说明：此实验可以检测实时温度（虽然说不准）</h2>
   <pre><code>/* 实验三 实时温度检测器 */
@@ -309,7 +231,7 @@ void loop() {
   lcd.print(DHT.temperature,1);
   delay(1000);
  }</code></pre>
-  <img src="sy3.png" alt="图片加载失败" width="340" height="270">
+  <img src="img/lab3.png" alt="图片加载失败" width="340" height="270">
   <h1>实验四 日历</h1>
   <h2>说明：此实验可以做出电子日历，但是这个时间也不准，会快一些</h2>
   <pre><code>/*实验四 日历*/
@@ -521,6 +443,6 @@ void date(){
         D2=0;
         D1=D1+1;
       }</code></pre>
-  <img src="sy4.png" alt="图片加载失败" width="400" height="300">
+  <img src="img/lab4.png" alt="图片加载失败" width="400" height="300">
 </body>
 </html>
