@@ -5,14 +5,25 @@
   <title>2021211439张宇琛的软导实验课期末作业</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
   <style>
+    @keyframes rotating {
+      0% {
+        transform: rotateY(0);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+
     #op-container {
       position: fixed;
       right: 0;
       bottom: 0;
       max-width: 50%;
     }
+
     #op-container img {
       max-width: 50%;
+<<<<<<< HEAD:index.html
       vertical-align:bottom;
     }
     #op2-container {
@@ -24,7 +35,12 @@
     #op2-container img {
       max-width: 50%;
       vertical-align: top;
+=======
+      vertical-align: bottom;
+      animation: rotating 1s infinite linear;
+>>>>>>> 9f94ccef21d1796069988bffa9dc46ba7663a56c:index.htm
     }
+
     @supports (
       (-webkit-backdrop-filter: saturate(180%) blur(20px)) or 
       (backdrop-filter: saturate(180%) blur(20px))
@@ -35,21 +51,23 @@
         backdrop-filter: saturate(180%) blur(20px);
       }
     }
+
     title {
       font-family: "PANGTOUYU";
-      src: url("方正胖头鱼简体.ttf");
     }
+
     body {
       background-image: url("https://api.timecdn.cn/libs/wallpaper/v1");
       background-attachment: fixed;
       background-size: cover;
       padding-top: 30px;
-
     }
+
     @font-face {
       font-family: "PANGTOUYU";
       src: url("方正胖头鱼简体.ttf");
     }
+
     code {
       font-family: "Comic Sans MS","PANGTOUYU";
       color:rgb(0, 0, 0);
