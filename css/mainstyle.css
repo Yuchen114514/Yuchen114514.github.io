@@ -12,6 +12,21 @@
     }
 }
 
+@keyframes container-rotating {
+    0% {
+        transform: rotate(-10deg);
+        transform-origin: center bottom;
+    }
+    50% {
+        transform: rotate(20deg);
+        transform-origin: center bottom;
+    }
+    100% {
+        transform: rotate(-20deg);
+        transform-origin: center bottom;
+    }
+}
+
 @supports (
     (-webkit-backdrop-filter: saturate(180%) blur(20px)) or 
     (backdrop-filter: saturate(180%) blur(20px))
@@ -56,6 +71,7 @@ code {
     right: 0;
     bottom: 0;
     max-width: 50%;
+    animation: container-rotating 1s infinite linear;
 }
 
 #op-container img {
@@ -68,11 +84,12 @@ code {
     position: fixed;
     right: 0;
     top: 30px;
-    max-width: 50%;
+    max-width: 40%;
+    animation: container-rotating 1s infinite linear;
 }
 
 #op2-container img {
-    max-width: 50%;
+    max-width: 25%;
     vertical-align: top;
     animation: rotating 1s infinite linear;
 }
